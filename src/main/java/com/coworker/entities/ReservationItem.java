@@ -20,9 +20,14 @@ public class ReservationItem {
     @ManyToOne(optional = false)
     @JoinColumn(name = "reservation_id", nullable = false)
     private Reservation reservation;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "room_id", nullable = false)
+    private Room room;
+
     @Column(nullable = false)
     private OffsetDateTime startAt;
+
     @Column(nullable = false)
     private OffsetDateTime endAt;
 }
-

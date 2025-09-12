@@ -23,7 +23,7 @@ public class Space {
 
     private String address;
 
-    @OneToMany(mappedBy = "space")
+    @OneToMany(mappedBy = "spaces")
     @Builder.Default
     private List<Room> rooms = new ArrayList<>();
 

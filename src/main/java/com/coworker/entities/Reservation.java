@@ -3,6 +3,7 @@ package com.coworker.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +21,12 @@ public class Reservation {
     private Long id;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "member_id" , nullable = false)
+    @JoinColumn(name = "member_id", nullable = false)
     private Member member;
 
-    @OneToMany (mappedBy = "reservation")
+    private OffsetDateTime createdAt;
+
+    @OneToMany(mappedBy = "reservation")
     @Builder.Default
     private List<ReservationItem> items = new ArrayList<>();
 
