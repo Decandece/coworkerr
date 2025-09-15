@@ -25,4 +25,5 @@ public class Amenity {
     @ManyToMany(mappedBy = "amenities")
     @Builder.Default
     private Set<Room> rooms = new HashSet<>();
+
 }
